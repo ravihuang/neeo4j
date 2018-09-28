@@ -14,7 +14,7 @@ ARG MYSQL_JDBC=https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j
 RUN apk add --no-cache --quiet curl && \
     curl --fail --silent --show-error --location --output plugins/apoc-${APOC_VERSION}-all.jar $APOC_URI && \
     curl --fail --silent --show-error --location --output plugins/postgresql-${PG_JDBC_VERSION}.jar $POSTGRES_URI && \
-    curl --fail --silent --show-error --location ${MYSQL_JDBC} && \
+    curl --fail --silent --show-error --location -O ${MYSQL_JDBC} && \
     tar xzvf *.tar.gz && mv mysql-connector-java-8.0.12/mysql-connector-java-8.0.12.jar plugins && \
     apk del curl
 
