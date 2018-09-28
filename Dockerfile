@@ -16,5 +16,6 @@ RUN apk add --no-cache --quiet curl && \
     curl --fail --silent --show-error --location --output plugins/postgresql-${PG_JDBC_VERSION}.jar $POSTGRES_URI && \
     curl --fail --silent --show-error --location -O ${MYSQL_JDBC} && \
     tar xzvf *.tar.gz && mv mysql-connector-java-8.0.12/mysql-connector-java-8.0.12.jar plugins && \
+    rm -rf mysql-connector-java-8.0.12* && \
     apk del curl
 
